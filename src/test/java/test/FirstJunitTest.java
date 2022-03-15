@@ -5,9 +5,14 @@ import com.codeborne.selenide.Configuration;
 
 import java.io.File;
 
+import com.codeborne.selenide.commands.ScrollIntoView;
+import com.codeborne.selenide.commands.ScrollTo;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.SendKeysAction;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -25,13 +30,12 @@ public class FirstJunitTest {
     void FormRun() {
         // Открываем страничку формы:
         open("automation-practice-form");
-
         //Заполняем форму регистрационными данными:
         $("#firstName").setValue("Stanislav");
         $("#lastName").setValue("Zaychenko");
         $("#userEmail").setValue("Ashestodust@yandex.ru");
         $(byText("Male")).click(); //заметка на будущее, попробовать через Xpath
-        //$("#gender-radio-1").click();
+       // $("#gender-radio-1").click();
         $("#userNumber").setValue("9147851961");
         $("#dateOfBirthInput").sendKeys( Keys.CONTROL,"a");
         $("#dateOfBirthInput").sendKeys( "13 apr 1987", Keys.ENTER);
@@ -47,7 +51,7 @@ public class FirstJunitTest {
         $(byText("NCR")).click();
         $("#city").click();
         $(byText("Delhi")).click();
-        $("#submit").click();
+        $(byText("Submit")).scrollIntoView(false).click();
 
         //Проверяем заполнение формы
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
