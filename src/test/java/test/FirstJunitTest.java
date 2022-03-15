@@ -4,16 +4,9 @@ package test;
 import com.codeborne.selenide.Configuration;
 
 import java.io.File;
-
-import com.codeborne.selenide.commands.ScrollIntoView;
-import com.codeborne.selenide.commands.ScrollTo;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.SendKeysAction;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -23,7 +16,7 @@ public class FirstJunitTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com/";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "700x1080";
     }
 
     @Test
@@ -41,7 +34,7 @@ public class FirstJunitTest {
         $("#dateOfBirthInput").sendKeys( "13 apr 1987", Keys.ENTER);
         $("#subjectsInput").setValue("Comp").pressEnter();
         $("#subjectsInput").setValue("Ar").pressEnter();
-        $(byText("Sports")).click();
+        $(byText("Sports")).scrollTo().click();
         $(byText("Reading")).click();
         $(byText("Music")).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/pic.png"));
@@ -50,8 +43,8 @@ public class FirstJunitTest {
         $("#state").click();
         $(byText("NCR")).click();
         $("#city").click();
-        $(byText("Delhi")).click();
-        $(byText("Submit")).scrollIntoView(false).click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
+        $(byText("Submit")).click();
 
         //Проверяем заполнение формы
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
@@ -65,7 +58,7 @@ public class FirstJunitTest {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Taxes, BestCh.St 17"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
-        $(byText("Close")).click();
+        $(byText("Close")).scrollTo().click();
     }
 }
 
