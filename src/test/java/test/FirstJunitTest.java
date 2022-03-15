@@ -1,10 +1,5 @@
 package test;
 
-
-import com.codeborne.selenide.Configuration;
-
-import java.io.File;
-import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import static com.codeborne.selenide.Condition.text;
