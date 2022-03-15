@@ -17,7 +17,7 @@ public class FirstJunitTest extends TestBase {
     @Test
     void FormRun() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        step("Открываем главную страницу", () -> {
+        step("Open main page", () -> {
             open("/automation-practice-form");
         });
         step("Заполняем форму регистрационными данными:", () -> {
