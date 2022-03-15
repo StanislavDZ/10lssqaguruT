@@ -38,7 +38,7 @@ public class FirstJunitTest {
         $(byText("Sports")).scrollTo().click();
         $(byText("Reading")).click();
         $(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/pic.png"));
+       // $("#uploadPicture").uploadFile(new File("src/test/resources/pic.png"));
         $("#currentAddress").setValue("Taxes, BestCh.St 17");
         $("#submit").scrollTo();
         $("#state").click();
