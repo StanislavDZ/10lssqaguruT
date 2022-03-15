@@ -15,15 +15,15 @@ public class FirstJunitTest {
 
     @BeforeAll
     static void beforeAll() {
-        //Configuration.baseUrl = "https://demoqa.com/";
+        Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browserSize = "700x1080";
-      //  Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
     @Test
     void FormRun() {
         // Открываем страничку формы:
-        open("https://demoqa.com/automation-practice-form");
+        open("automation-practice-form");
         //Заполняем форму регистрационными данными:
         $("#firstName").setValue("Stanislav");
         $("#lastName").setValue("Zaychenko");
