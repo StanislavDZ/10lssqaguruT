@@ -34,6 +34,7 @@ public class FirstJunitTest extends TestBase {
             $(byText("Reading")).click();
             $(byText("Music")).click();
             //$("#uploadPicture").uploadFile(new File("src/test/resources/pic.png"));
+            $("#currentAddress").setValue("Taxes, BestCh.St 17");
             $("#submit").scrollTo();
             $("#state").click();
             $(byText("NCR")).click();
