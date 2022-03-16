@@ -1,12 +1,10 @@
 package test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
