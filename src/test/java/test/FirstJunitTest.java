@@ -1,17 +1,15 @@
 package test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.Keys.CONTROL;
 
 public class FirstJunitTest extends TestBase {
     @Test
@@ -26,7 +24,7 @@ public class FirstJunitTest extends TestBase {
             $("#userEmail").setValue("Ashestodust@yandex.ru");
             $(byText("Male")).click();
             $("#userNumber").setValue("9147851961");
-            $("#dateOfBirthInput").sendKeys(Keys.CONTROL, "a");
+            $("#dateOfBirthInput").sendKeys(CONTROL, "a");
             $("#dateOfBirthInput").sendKeys("13 apr 1987", Keys.ENTER);
             $("#subjectsInput").setValue("Comp").pressEnter();
             $("#subjectsInput").setValue("Ar").pressEnter();
@@ -34,6 +32,7 @@ public class FirstJunitTest extends TestBase {
             $(byText("Reading")).click();
             $(byText("Music")).click();
             //$("#uploadPicture").uploadFile(new File("src/test/resources/pic.png"));
+            $("#currentAddress").setValue("Taxes, BestCh.St 17");
             $("#submit").scrollTo();
             $("#state").click();
             $(byText("NCR")).click();
