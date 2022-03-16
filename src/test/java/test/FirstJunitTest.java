@@ -1,6 +1,7 @@
 package test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -13,9 +14,9 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class FirstJunitTest extends TestBase {
-
     @Test
     void FormRun() {
+        //String address = System.getProperty("address");
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {
             open("/automation-practice-form");
@@ -34,7 +35,6 @@ public class FirstJunitTest extends TestBase {
             $(byText("Reading")).click();
             $(byText("Music")).click();
             //$("#uploadPicture").uploadFile(new File("src/test/resources/pic.png"));
-            $("#currentAddress").setValue("Taxes, BestCh.St 17");
             $("#submit").scrollTo();
             $("#state").click();
             $(byText("NCR")).click();

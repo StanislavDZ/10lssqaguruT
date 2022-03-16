@@ -52,3 +52,9 @@ tasks.withType(Test) {
         }
     }
 }
+
+task address(type: Test) {
+    useJUnitPlatform{
+        includeTags "address"
+    }
+}
