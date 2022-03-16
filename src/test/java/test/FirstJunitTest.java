@@ -16,7 +16,6 @@ import static io.qameta.allure.Allure.step;
 public class FirstJunitTest extends TestBase {
     @Test
     void FormRun() {
-        //String address = System.getProperty("address");
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {
             open("/automation-practice-form");
